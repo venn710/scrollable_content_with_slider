@@ -13,6 +13,7 @@
 		27EA57972BBC613800E58751 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27EA57962BBC613800E58751 /* Preview Assets.xcassets */; };
 		27EA579E2BBC614900E58751 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA579D2BBC614900E58751 /* PreferenceKey.swift */; };
 		27EA57A02BBC617400E58751 /* ScrollableContentWithSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA579F2BBC617300E58751 /* ScrollableContentWithSlider.swift */; };
+		27EA57A22BBC7D7300E58751 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 27EA57A12BBC7D7300E58751 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		27EA57962BBC613800E58751 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27EA579D2BBC614900E58751 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		27EA579F2BBC617300E58751 /* ScrollableContentWithSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableContentWithSlider.swift; sourceTree = "<group>"; };
+		27EA57A12BBC7D7300E58751 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 		27EA57832BBC613600E58751 = {
 			isa = PBXGroup;
 			children = (
+				27EA57A12BBC7D7300E58751 /* README.md */,
 				27EA578E2BBC613600E58751 /* scrollable-content-with-slider */,
 				27EA578D2BBC613600E58751 /* Products */,
 			);
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27EA57A22BBC7D7300E58751 /* README.md in Resources */,
 				27EA57972BBC613800E58751 /* Preview Assets.xcassets in Resources */,
 				27EA57942BBC613800E58751 /* Assets.xcassets in Resources */,
 			);

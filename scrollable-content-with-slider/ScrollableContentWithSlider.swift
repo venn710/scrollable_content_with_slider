@@ -120,11 +120,15 @@ struct ScrollableContentWithSlider<T: View>: View {
                 }
                 .coordinateSpace(name: "scrollview")
                 if totalScrollableAreaWidth - availableWidth > 0 && showSlider {
+
+                    /// Background slider will stay intact with the given width and height.
                     Rectangle()
                         .fill(backgroundSliderColor)
                         .cornerRadius(100)
                         .frame(width: backgroundSliderWidth, height: backgroundSliderHeight)
                         .overlay(alignment: .leading) {
+                            
+                            /// Foreground slider will slide over the background slider with the changing scrollerLeadingPadding.
                             Rectangle()
                                 .fill(foregroundSliderColor)
                                 .cornerRadius(100)
