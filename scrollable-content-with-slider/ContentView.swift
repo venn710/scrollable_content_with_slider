@@ -7,15 +7,32 @@
 
 import SwiftUI
 
+/// An Example of how we can use Slider.
 struct ContentView: View {
+    private var listOfColors: [Color] = [
+        .red,
+        .green,
+        .blue,
+        .green,
+        .yellow,
+        .orange,
+        .purple
+    ]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        ScrollView {
+            ScrollableContentWithSlider(
+                shouldAnimate: true,
+                content: listOfColors
+                    .map { _color in
+                        Rectangle()
+                            .fill(_color)
+                            .frame(width: 100, height: 200)
+                    }
+            )
+            .padding()
         }
-        .padding()
     }
 }
 
