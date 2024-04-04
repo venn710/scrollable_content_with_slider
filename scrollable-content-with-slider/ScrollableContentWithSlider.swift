@@ -49,7 +49,7 @@ struct ScrollableContentWithSlider<T: View>: View {
     /// This denotes the scrolled Index which is being used as an identifier for scrolling to a specific card during Animation.
     @State private var scrolledIndex: Int = 0
     
-    /// This foregroundSliderWidth is the Width of the Inner Slider of colour 'sliderForegroundColor' from the LEADING EDGE.
+    /// This foregroundSliderWidth is the Width of the Inner Slider of colour 'sliderForegroundColor'.
     /// Here subtracting 2 which refers to the Padding which we gave for the foregroundSlider.
     private var foregroundSliderWidth: Double {
         let count: Double = Double(content.count)
@@ -67,11 +67,11 @@ struct ScrollableContentWithSlider<T: View>: View {
      
      1. At first I'm checking for the singleCardWidth which will be assigned after the content is built
      2. Then I'm getting the percentage of the scrolled portion
-     3. Only considering scrolling to the right side hence considering only horizontalScrollPosition < 0 else
-     scrollerLeadingPadding will be 0.
-     4. Only considering the scrolling inside available width hence scrolledPortion will be in my (0 to 1) else
-     leadingPadding will be remaining area in my scroller which is ((sliderWidth - 2) - foregroundSliderWidth)
-     5. used abs because horizontalScrollPosition will be -ve when we move right.
+     3. Considering the scenario where scrolling occurs towards the right side of the coordinate space hence horizontalScrollPosition should be < 0 
+     else leading padding will be 0
+     4. Only considering the scrolling inside available width hence scrolledPortion will be in my (0 to 1) else leading padding will be
+     remaining area in my slider which is ((backgroundSliderWidth - 2) - foregroundSliderWidth)
+     5. Used abs because horizontalScrollPosition will be -ve when we move right inside coordinate space.
      
      */
     private var scrollerLeadingPadding: Double{
@@ -112,13 +112,13 @@ struct ScrollableContentWithSlider<T: View>: View {
                     }
                     .background(GeometryReader { geometry in
                         Color.clear
-                            .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named("scrollview")).origin)
+                            .preference(key: ScrollOffsetPreferenceKey.self, value: geometry.frame(in: .named("scroll")).origin)
                     })
                     .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
                         self.horizontalScrollPosition = Double(value.x)
                     }
                 }
-                .coordinateSpace(name: "scrollview")
+                .coordinateSpace(name: "scroll")
                 if totalScrollableAreaWidth - availableWidth > 0 && showSlider {
 
                     /// Background slider will stay intact with the given width and height.
