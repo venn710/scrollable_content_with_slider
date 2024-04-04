@@ -47,7 +47,7 @@ To replicate the behaviour of ScrollIndicators in a SwiftUI ScrollView, I've imp
 
 3. Considering the scenario where scrolling occurs towards the right side of the coordinate space hence horizontalScrollPosition should be < 0 else leading padding will be 0
 
-4. Only considering the scrolling inside available width hence scrolledPortion will be in my (0 to 1) else leading padding will be remaining area in my scroller which is ((sliderWidth - 2) - foregroundSliderWidth)
+4. Only considering the scrolling inside available width hence scrolledPortion will be in my (0 to 1) else leading padding will be remaining area in my scroller which is ((backgroundSliderWidth - 2) - foregroundSliderWidth)
 
 5. Used abs because horizontalScrollPosition will be -ve when we move right inside coordinate space.
 
